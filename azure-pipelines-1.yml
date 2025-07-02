@@ -1,0 +1,19 @@
+# ASP.NET
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'Azure subscription 1(978b1cb1-a1ad-413c-9fa9-2b4cc3c59cc3)'
+    command: 'build'
+# Build and test ASP.NET projects.
+# Add steps that publish symbols, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'Azure subscription 1(978b1cb1-a1ad-413c-9fa9-2b4cc3c59cc3)'
+    command: 'run'
